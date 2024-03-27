@@ -5,7 +5,19 @@ import React from 'react';
 import TabNavigator from './TabNavigator';
 
 const App = () => {
-  return <TabNavigator />;
+  return <TabNavigator style={styles.content}/>;
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'red',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default App;

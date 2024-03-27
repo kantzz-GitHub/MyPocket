@@ -11,8 +11,18 @@ const Stack = createStackNavigator();
 
 const TransactionsStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Transactions" component={TransactionsScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: 'orange', // Header background color
+        },
+        headerTintColor: 'white', // Text color in header
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    >
+      <Stack.Screen name="Expenses" component={TransactionsScreen} />
       <Stack.Screen name="Transaction Detail" component={TransactionDetailScreen} />
     </Stack.Navigator>
   );
@@ -21,8 +31,19 @@ const TransactionsStack = () => {
 const TabNavigator = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="History" component={TransactionsStack} />
+      <Tab.Navigator
+        screenOptions={{
+          "tabBarActiveTintColor": "orange",
+          "tabBarInactiveTintColor": "black",
+          "tabBarStyle": [
+            {
+              "display": "flex"
+            },
+            null
+          ]
+        }}
+      >
+        <Tab.Screen name="Transactions" component={TransactionsStack} />
         <Tab.Screen name="Summary" component={SummaryScreen} />
       </Tab.Navigator>
     </NavigationContainer>
@@ -30,4 +51,3 @@ const TabNavigator = () => {
 };
 
 export default TabNavigator;
-
