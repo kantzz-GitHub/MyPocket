@@ -1,3 +1,7 @@
+import { firebaseConfig } from './firebaseConfig';
+import firebase from 'firebase/app';
+import 'firebase/database';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
